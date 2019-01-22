@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"gitbook/four"
+	"gitbook/five"
+	"gitbook/six"
 )
 
 func main()  {
@@ -15,6 +17,10 @@ func main()  {
 	four.StrToAthor()
 	four.TimeAndDate()
 	four.PointTest()
+	five.IfTest()
+	five.ErrorsTest()
+	six.FuncTest()
+
 }
 
 
