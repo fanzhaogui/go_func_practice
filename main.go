@@ -20,7 +20,9 @@ func main()  {
 	five.IfTest()
 	five.ErrorsTest()
 	six.FuncTest()
-
+	six.FuncTest2()
+	six.FuncTest3()
+	six.FuncTest4()
 }
 
 
