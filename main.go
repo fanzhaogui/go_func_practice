@@ -5,6 +5,8 @@ import (
 	"gitbook/four"
 	"gitbook/five"
 	"gitbook/six"
+	"gitbook/seven"
+	"strconv"
 )
 
 func main()  {
@@ -23,6 +25,26 @@ func main()  {
 	six.FuncTest2()
 	six.FuncTest3()
 	six.FuncTest4()
+	six.HandleFib()
+	// 闭包函数
+	func(){
+		sum := 0
+		for i := 1; i <= 1e6; i ++ {
+			sum += i
+		}
+	}()
+
+	// 值转换
+	var in = 65
+	intostr := string(in)
+	fmt.Println(intostr) // A
+	intostr2 := strconv.Itoa(in)
+	fmt.Println(intostr2)
+
+	//数组
+	seven.Array1()
+
+
 }
 
 
