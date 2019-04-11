@@ -79,13 +79,40 @@ func main() {
 		<- c
 	}*/
 
-	// 解决方式2
-	wg := sync.WaitGroup{}
+	// 解决方式2 同步包
+	/*wg := sync.WaitGroup{}
 	wg.Add(10)
 	for i := 0; i < 10; i++ {
 		go GorunWg(&wg, i)
 	}
-	wg.Wait()
+	wg.Wait()*/
+
+	// 第6测试 多个channel的解决方案
+	c1, c2 := make(chan int), make(chan string)
+	// o := make(chan bool)
+	go func() {
+		for {
+			select {
+			case v, ok := <-c1:
+				if !ok {
+					break
+				}
+				fmt.Println("c1: ", v)
+			case v, ok := <-c2:
+				if !ok {
+					break
+				}
+				fmt.Println("c2: ", v)
+			}
+		}
+	}()
+
+	c1 <- 1
+	c2 <- "hello"
+	c1 <- 3
+	c2 <- "world"
+	close(c1)
+	close(c2)
 }
 
 // func Go() {
